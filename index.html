@@ -21,9 +21,13 @@
       --muted: #ded3bc;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -32,10 +36,19 @@
       font-family: 'Work Sans', Arial, sans-serif;
     }
 
-    body.invitation-locked { overflow: hidden; }
+    body.invitation-locked {
+      overflow: hidden;
+    }
 
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; cursor: pointer; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
 
     button:focus-visible,
     a:focus-visible {
@@ -43,7 +56,7 @@
       outline-offset: 5px;
     }
 
-    /* MINIMAL OPENING SCREEN */
+    /* OPENING SCREEN */
 
     .opening-screen {
       position: fixed;
@@ -60,7 +73,9 @@
         #09291b 60%,
         #061e15 100%
       );
-      transition: opacity .65s ease, visibility .65s ease;
+      transition:
+        opacity .65s ease,
+        visibility .65s ease;
     }
 
     .opening-screen.is-hidden {
@@ -87,7 +102,9 @@
       font: 400 clamp(53px, 9vw, 82px)/1.15 Sacramento, cursive;
     }
 
-    .opening-names span { display: block; }
+    .opening-names span {
+      display: block;
+    }
 
     .opening-names em {
       display: block;
@@ -102,7 +119,9 @@
       letter-spacing: .15em;
     }
 
-    .opening-button { margin-top: 32px; }
+    .opening-button {
+      margin-top: 32px;
+    }
 
     .opening-note {
       color: var(--muted);
@@ -110,7 +129,7 @@
       margin-top: 16px;
     }
 
-    /* MAIN INVITATION */
+    /* HERO SECTION */
 
     .hero {
       position: relative;
@@ -121,9 +140,19 @@
       justify-content: center;
       overflow: hidden;
       padding: 120px 25px 65px;
-      background:
-        linear-gradient(90deg, #05231735, #07261945, #05231735),
-        url('garden-background.webp') center / cover no-repeat;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(5, 35, 23, .12),
+          rgba(7, 38, 25, .23),
+          rgba(5, 35, 23, .12)
+        ),
+        url('garden-background.webp');
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .hero::before {
@@ -131,6 +160,7 @@
       position: absolute;
       inset: 0;
       z-index: -1;
+
       background: radial-gradient(
         ellipse 47% 73% at 50% 47%,
         #08291ae0 8%,
@@ -147,6 +177,8 @@
       box-shadow: inset 0 0 180px #03140f85;
       pointer-events: none;
     }
+
+    /* NAVIGATION */
 
     .topbar {
       position: absolute;
@@ -174,8 +206,13 @@
       text-transform: uppercase;
     }
 
-    .nav a { transition: color .2s; }
-    .nav a:hover { color: var(--gold); }
+    .nav a {
+      transition: color .2s;
+    }
+
+    .nav a:hover {
+      color: var(--gold);
+    }
 
     .music {
       background: #082b20cc;
@@ -187,7 +224,11 @@
       white-space: nowrap;
     }
 
-    .music:hover { background: #23513a; }
+    .music:hover {
+      background: #23513a;
+    }
+
+    /* DECORATIVE SIDE TEXT */
 
     .side {
       position: absolute;
@@ -217,12 +258,28 @@
       margin-top: 10px;
     }
 
+    /* MAIN INVITATION CONTENT */
+
     .hero-inner {
       position: relative;
       z-index: 2;
       text-align: center;
       width: min(100%, 890px);
       margin: auto;
+    }
+
+    /* BISMILLAH */
+
+    .bismillah {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(20px, 2.5vw, 29px);
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--gold);
+      margin: 0 auto 15px;
+      text-align: center;
+      direction: rtl;
+      text-shadow: 0 2px 15px #031b13;
     }
 
     .eyebrow {
@@ -233,7 +290,7 @@
       font-weight: 500;
     }
 
-    /* ORIGINAL SACRAMENTO FONT */
+    /* KEEPING ORIGINAL SACRAMENTO FONT */
 
     .names {
       font: 400 clamp(60px, 6vw, 92px)/1.12 Sacramento, cursive;
@@ -242,7 +299,9 @@
       text-shadow: 0 4px 25px #031b13;
     }
 
-    .names span { display: block; }
+    .names span {
+      display: block;
+    }
 
     .names em {
       display: block;
@@ -279,6 +338,8 @@
       background: #d5b47c;
     }
 
+    /* COUNTDOWN */
+
     .countdown {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -306,6 +367,8 @@
       text-transform: uppercase;
     }
 
+    /* WEDDING DETAILS */
+
     .details {
       display: flex;
       align-items: center;
@@ -322,7 +385,9 @@
       border-right: 1px solid #d8ba8885;
     }
 
-    .details > div:last-child { border: 0; }
+    .details > div:last-child {
+      border: 0;
+    }
 
     .details b {
       display: block;
@@ -333,6 +398,8 @@
       text-transform: uppercase;
       margin-bottom: 4px;
     }
+
+    /* BUTTONS */
 
     .buttons {
       display: flex;
@@ -365,7 +432,9 @@
       color: var(--cream);
     }
 
-    .btn.outline:hover { background: #28503b; }
+    .btn.outline:hover {
+      background: #28503b;
+    }
 
     .scroll {
       position: absolute;
@@ -377,6 +446,8 @@
       text-transform: uppercase;
       color: var(--muted);
     }
+
+    /* FLOATING PETALS */
 
     .petal {
       position: absolute;
@@ -393,12 +464,18 @@
         transform: translate(0, 0) rotate(0);
         opacity: 0;
       }
-      15%, 85% { opacity: .65; }
+
+      15%, 85% {
+        opacity: .65;
+      }
+
       100% {
         transform: translate(55px, 115vh) rotate(300deg);
         opacity: 0;
       }
     }
+
+    /* OTHER SECTIONS */
 
     .section {
       padding: 110px 20px;
@@ -415,7 +492,9 @@
       margin: 20px 0 15px;
     }
 
-    .light .eyebrow { color: #947449; }
+    .light .eyebrow {
+      color: #947449;
+    }
 
     .section p {
       max-width: 680px;
@@ -461,50 +540,97 @@
       line-height: 1.8;
     }
 
-    /* RESPONSIVE DESIGN */
+    /* TABLET */
 
     @media (max-width: 1000px) {
-      .hero { padding-top: 155px; }
-      .side, .verse { top: 96px; }
-      .side { left: 25px; }
-      .verse { right: 25px; }
-      .names { font-size: clamp(60px, 7vw, 88px); }
+      .hero {
+        padding-top: 155px;
+      }
+
+      .side,
+      .verse {
+        top: 96px;
+      }
+
+      .side {
+        left: 25px;
+      }
+
+      .verse {
+        right: 25px;
+      }
+
+      .names {
+        font-size: clamp(60px, 7vw, 88px);
+      }
     }
+
+    /* MOBILE: SEPARATE PORTRAIT BACKGROUND */
 
     @media (max-width: 680px) {
       .hero {
         min-height: 100svh;
         padding: 130px 17px 75px;
-        background-position: center;
-        background-size: auto 100%;
+
+        background-image:
+          linear-gradient(
+            to bottom,
+            rgba(4, 27, 17, .25),
+            rgba(4, 27, 17, .43) 35%,
+            rgba(4, 27, 17, .48) 65%,
+            rgba(4, 27, 17, .25)
+          ),
+          url('garden-background-mobile.webp');
+
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
 
       .hero::before {
-        background: linear-gradient(
-          90deg,
-          #062417c9,
-          #062417e8 40%,
-          #062417e8 60%,
-          #062417c9
-        );
+        background: none;
       }
 
-      .topbar { padding: 16px 18px; }
-      .logo { font-size: 31px; }
-      .nav { display: none; }
+      .hero::after {
+        box-shadow: inset 0 0 55px #03140f40;
+      }
+
+      .topbar {
+        padding: 16px 18px;
+      }
+
+      .logo {
+        font-size: 31px;
+      }
+
+      .nav {
+        display: none;
+      }
 
       .music {
         padding: 10px 13px;
         font-size: 11px;
       }
 
-      .side, .verse { display: none; }
-      .hero-inner { margin: auto; }
+      .side,
+      .verse {
+        display: none;
+      }
+
+      .hero-inner {
+        margin: auto;
+      }
+
+      .bismillah {
+        font-size: clamp(19px, 5vw, 25px);
+        line-height: 1.7;
+        margin-bottom: 13px;
+      }
 
       .names {
         font-size: clamp(54px, 12vw, 78px);
-        line-height: .98;
-        margin: 26px 0 10px;
+        line-height: 1.05;
+        margin: 22px 0 13px;
       }
 
       .eyebrow {
@@ -522,9 +648,18 @@
         margin: 22px auto;
       }
 
-      .countdown > div { padding: 9px 3px; }
-      .countdown strong { font-size: 34px; }
-      .countdown small { font-size: 8px; }
+      .countdown > div {
+        padding: 9px 3px;
+        background: rgba(3, 28, 18, .65);
+      }
+
+      .countdown strong {
+        font-size: 34px;
+      }
+
+      .countdown small {
+        font-size: 8px;
+      }
 
       .details {
         gap: 11px;
@@ -537,15 +672,22 @@
         font-size: 11px;
       }
 
-      .details > div:last-child { flex-basis: 100%; }
+      .details > div:last-child {
+        flex-basis: 100%;
+      }
 
       .btn {
         padding: 13px 19px;
         font-size: 11px;
       }
 
-      .section { padding: 85px 20px; }
-      .section h2 { font-size: 64px; }
+      .section {
+        padding: 85px 20px;
+      }
+
+      .section h2 {
+        font-size: 64px;
+      }
 
       .scroll {
         bottom: 15px;
@@ -554,14 +696,28 @@
     }
 
     @media (max-width: 370px) {
-      .names { font-size: 49px; }
-      .hero { padding-left: 12px; padding-right: 12px; }
-      .details > div { font-size: 10px; }
-      .btn { padding: 12px 14px; }
+      .names {
+        font-size: 49px;
+      }
+
+      .hero {
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      .details > div {
+        font-size: 10px;
+      }
+
+      .btn {
+        padding: 12px 14px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         animation: none !important;
         scroll-behavior: auto !important;
       }
@@ -571,7 +727,7 @@
 
 <body class="invitation-locked">
 
-  <!-- MINIMAL OPENING SCREEN -->
+  <!-- OPENING SCREEN -->
 
   <div
     class="opening-screen"
@@ -581,7 +737,9 @@
     aria-label="Open wedding invitation"
   >
     <div class="opening-card">
-      <div class="opening-kicker">With love & blessings</div>
+      <div class="opening-kicker">
+        With love & blessings
+      </div>
 
       <div class="opening-names">
         <span>Muhammed Rafi</span>
@@ -601,11 +759,13 @@
         ✧ Open Invitation ✧
       </button>
 
-      <div class="opening-note">Opens with music ♫</div>
+      <div class="opening-note">
+        Opens with music ♫
+      </div>
     </div>
   </div>
 
-  <!-- BACKGROUND MUSIC -->
+  <!-- MUSIC -->
 
   <audio
     id="audio"
@@ -614,9 +774,10 @@
     loop
   ></audio>
 
-  <!-- MAIN WEDDING INVITATION -->
+  <!-- WEDDING INVITATION -->
 
   <header class="hero" id="home">
+
     <div class="topbar">
       <a class="logo" href="#home">R & F</a>
 
@@ -649,7 +810,16 @@
     </div>
 
     <div class="hero-inner">
-      <div class="eyebrow">The wedding of</div>
+
+      <!-- NEW BISMILLAH ABOVE WEDDING TITLE -->
+
+      <div class="bismillah" lang="ar" dir="rtl">
+        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+      </div>
+
+      <div class="eyebrow">
+        The wedding of
+      </div>
 
       <h1 class="names">
         <span>Muhammed Rafi</span>
@@ -663,34 +833,43 @@
 
       <div class="divider">♡</div>
 
+      <!-- COUNTDOWN -->
+
       <div class="countdown" aria-label="Wedding countdown">
         <div>
           <strong id="days">--</strong>
           <small>Days</small>
         </div>
+
         <div>
           <strong id="hours">--</strong>
           <small>Hours</small>
         </div>
+
         <div>
           <strong id="minutes">--</strong>
           <small>Minutes</small>
         </div>
+
         <div>
           <strong id="seconds">--</strong>
           <small>Seconds</small>
         </div>
       </div>
 
+      <!-- WEDDING DETAILS -->
+
       <div class="details" id="details">
         <div>
           <b>Wedding date</b>
           Sunday, 6 December 2026
         </div>
+
         <div>
           <b>Time</b>
           11:30 AM – 12:00 PM
         </div>
+
         <div>
           <b>Venue</b>
           The Palace Convention Center
@@ -716,6 +895,7 @@
           ▦ Add to Calendar ↗
         </a>
       </div>
+
     </div>
 
     <a class="scroll" href="#blessings">
@@ -727,7 +907,8 @@
 
   <main>
     <section class="section light" id="blessings">
-      <div class="arabic" lang="ar">
+
+      <div class="arabic" lang="ar" dir="rtl">
         بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
       </div>
 
@@ -743,12 +924,16 @@
         married life. Your presence and prayers will make this
         day even more meaningful.
       </p>
+
     </section>
 
     <!-- VENUE -->
 
     <section class="section venue" id="venue">
-      <div class="eyebrow">You are cordially invited</div>
+
+      <div class="eyebrow">
+        You are cordially invited
+      </div>
 
       <h2>
         The Palace<br>
@@ -772,14 +957,20 @@
           Get Directions ↗
         </a>
       </div>
+
     </section>
   </main>
 
   <!-- FOOTER -->
 
   <footer>
-    <div class="eyebrow">With love & gratitude</div>
-    <div class="script">See you there!</div>
+    <div class="eyebrow">
+      With love & gratitude
+    </div>
+
+    <div class="script">
+      See you there!
+    </div>
 
     <p>
       Muhammed Rafi & Farzana Basheer<br>
@@ -788,6 +979,8 @@
   </footer>
 
   <script>
+    // MUSIC
+
     const audio = document.getElementById('audio');
     const music = document.getElementById('music');
 
@@ -804,7 +997,7 @@
       );
     }
 
-    // OPEN INVITATION AND START MUSIC
+    // OPEN INVITATION
 
     const openingScreen =
       document.getElementById('openingScreen');
@@ -813,7 +1006,6 @@
       document.getElementById('openInvitation');
 
     openInvitation.addEventListener('click', () => {
-      // Start audio directly from the user's click.
       const playback = audio.play();
 
       openingScreen.classList.add('is-hidden');
@@ -851,7 +1043,7 @@
       setLabel();
     });
 
-    // WEDDING COUNTDOWN
+    // COUNTDOWN
 
     const date = new Date('2026-12-06T11:30:00+05:30');
 
@@ -897,6 +1089,7 @@
 
         petal.className = 'petal';
         petal.textContent = i % 2 ? '✦' : '❀';
+
         petal.style.left = (i * 8 + 3) + '%';
         petal.style.animationDuration = (10 + i % 6) + 's';
         petal.style.animationDelay = (-i * 2) + 's';
@@ -905,5 +1098,6 @@
       }
     }
   </script>
+
 </body>
 </html>

@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#082719">
+    <meta name="description" content="Wedding invitation of Farzana Basheer and Muhammed Rafi, 6 December 2026.">
+    <title>Farzana Basheer & Muhammed Rafi | Wedding Invitation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --deep: #09291b;
+            --dark: #061e15;
+            --gold: #e8c78f;
+            --cream: #fff8e9;
+            --muted: #ded3bc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--deep);
+            color: var(--cream);
+            font-family: 'Work Sans', Arial, sans-serif;
+        }
+
+        body.invitation-locked {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 5px;
+        }
+
+        /* OPENING SCREEN */
+
+        .opening-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            background: radial-gradient(ellipse at 50% 38%,
+                    #214a34 0%,
+                    #09291b 60%,
+                    #061e15 100%);
+            transition:
+                opacity .65s ease,
+                visibility .65s ease;
+        }
+
+        .opening-screen.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .opening-card {
+            width: min(100%, 520px);
+            padding: 48px 22px;
+            border: 1px solid #e8c78f80;
+        }
+
+        .opening-kicker {
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: .27em;
+            text-transform: uppercase;
+        }
+
+        .opening-names {
+            margin: 28px 0 15px;
+            font: 400 clamp(53px, 9vw, 82px)/1.15 Sacramento, cursive;
+        }
+
+        .opening-names span {
+            display: block;
+        }
+
+        .opening-names em {
+            display: block;
+            font-style: normal;
+            font-size: .65em;
+            color: var(--gold);
+        }
+
+        .opening-date {
+            color: var(--muted);
+            font-size: 11px;
+            letter-spacing: .15em;
+        }
+
+        .opening-button {
+            margin-top: 32px;
+        }
+
+        .opening-note {
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 16px;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            position: relative;
+            min-height: 100svh;
+            isolation: isolate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 120px 25px 65px;
+
+            background-image:
+                linear-gradient(90deg,
+                    rgba(5, 35, 23, .12),
+                    rgba(7, 38, 25, .23),
+                    rgba(5, 35, 23, .12)),
+                url('garden-background.webp');
+
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+
+            background: radial-gradient(ellipse 47% 73% at 50% 47%,
+                    #08291ae0 8%,
+                    #08291ac9 68%,
+                    transparent 100%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            box-shadow: inset 0 0 180px #03140f85;
+            pointer-events: none;
+        }
+
+        /* NAVIGATION */
+
+        .topbar {
+            position: absolute;
+            z-index: 5;
+            left: 0;
+            right: 0;
+            top: 0;
+            padding: 24px clamp(22px, 4vw, 75px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font: 38px Sacramento, cursive;
+            color: var(--gold);
+        }
+
+        .nav {
+            display: flex;
+            gap: clamp(15px, 2.6vw, 39px);
+            font-size: 10px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .nav a {
+            transition: color .2s;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .music {
+            background: #082b20cc;
+            border: 1px solid var(--gold);
+            border-radius: 30px;
+            color: var(--cream);
+            padding: 11px 20px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .music:hover {
+            background: #23513a;
+        }
+
+        /* DECORATIVE SIDE TEXT */
+
+        .side {
+            position: absolute;
+            top: 115px;
+            left: 5%;
+            font: 500 11px/1.85 'Work Sans', sans-serif;
+            letter-spacing: .25em;
+            color: var(--cream);
+            text-transform: uppercase;
+            text-shadow: 0 2px 9px #001;
+        }
+
+        .verse {
+            position: absolute;
+            top: 116px;
+            right: 5%;
+            font: italic 20px/1.5 'Cormorant Garamond', serif;
+            text-align: right;
+            letter-spacing: .03em;
+        }
+
+        .verse small {
+            display: block;
+            color: var(--gold);
+            font: 500 9px 'Work Sans', sans-serif;
+            letter-spacing: .25em;
+            margin-top: 10px;
+        }
+
+        /* MAIN INVITATION CONTENT */
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: min(100%, 890px);
+            margin: auto;
+        }
+
+        /* BISMILLAH */
+
+        .bismillah {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(20px, 2.5vw, 29px);
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--gold);
+            margin: 0 auto 15px;
+            text-align: center;
+            direction: rtl;
+            text-shadow: 0 2px 15px #031b13;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: .36em;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* KEEPING ORIGINAL SACRAMENTO FONT */
+
+        .names {
+            font: 400 clamp(60px, 6vw, 92px)/1.12 Sacramento, cursive;
+            margin: 26px 0 20px;
+            color: var(--cream);
+            text-shadow: 0 4px 25px #031b13;
+        }
+
+        .names span {
+            display: block;
+        }
+
+        .names em {
+            display: block;
+            font-size: .65em;
+            line-height: .85;
+            color: var(--gold);
+            font-style: normal;
+            margin: 5px 0;
+        }
+
+        .tagline {
+            font-size: 11px;
+            letter-spacing: .25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            line-height: 2;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: var(--gold);
+            font-size: 18px;
+            margin: 22px 0 12px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            width: 65px;
+            height: 1px;
+            background: #d5b47c;
+        }
+
+        /* COUNTDOWN */
+
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 560px;
+            margin: 27px auto;
+        }
+
+        .countdown>div {
+            border: 1px solid #d5b47c9c;
+            border-radius: 5px;
+            background: #061f16aa;
+            padding: 11px 6px;
+        }
+
+        .countdown strong {
+            display: block;
+            font: 400 clamp(30px, 4vw, 48px) 'Cormorant Garamond', serif;
+            color: var(--gold);
+        }
+
+        .countdown small {
+            font-size: 9px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        /* WEDDING DETAILS */
+
+        .details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 auto 24px;
+            max-width: 900px;
+        }
+
+        .details>div {
+            font-size: 11px;
+            line-height: 1.6;
+            padding: 2px 20px;
+            border-right: 1px solid #d8ba8885;
+        }
+
+        .details>div:last-child {
+            border: 0;
+        }
+
+        .details b {
+            display: block;
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 10px;
+            letter-spacing: .11em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        /* BUTTONS */
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            border: 1px solid var(--gold);
+            border-radius: 35px;
+            background: var(--gold);
+            color: #122b1c;
+            padding: 14px 26px;
+            font: 600 12px 'Work Sans', sans-serif;
+            transition: transform .2s, background .2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #f7daab;
+        }
+
+        .btn.outline {
+            background: #061e1590;
+            color: var(--cream);
+        }
+
+        .btn.outline:hover {
+            background: #28503b;
+        }
+
+        .scroll {
+            position: absolute;
+            bottom: 17px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 9px;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        /* FLOATING PETALS */
+
+        .petal {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+            top: -10%;
+            color: #edc5a8;
+            opacity: 0;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translate(0, 0) rotate(0);
+                opacity: 0;
+            }
+
+            15%,
+            85% {
+                opacity: .65;
+            }
+
+            100% {
+                transform: translate(55px, 115vh) rotate(300deg);
+                opacity: 0;
+            }
+        }
+
+        /* OTHER SECTIONS */
+
+        .section {
+            padding: 110px 20px;
+            text-align: center;
+        }
+
+        .light {
+            background: #f6eee0;
+            color: #314d3b;
+        }
+
+        .section h2 {
+            font: 400 clamp(60px, 8vw, 100px)/1.1 Sacramento, cursive;
+            margin: 20px 0 15px;
+        }
+
+        .light .eyebrow {
+            color: #947449;
+        }
+
+        .section p {
+            max-width: 680px;
+            margin: 20px auto;
+            font: 400 clamp(20px, 2.5vw, 28px)/1.7 'Cormorant Garamond', serif;
+        }
+
+        .arabic {
+            font-size: 27px;
+            color: #9a774b;
+        }
+
+        .venue {
+            background: radial-gradient(ellipse at center,
+                    #1c4732,
+                    #09291b 70%);
+        }
+
+        .venue h2 {
+            font: 400 clamp(46px, 6vw, 77px)/1.1 'Cormorant Garamond', serif;
+        }
+
+        .venue p {
+            font: 400 15px/2 'Work Sans', sans-serif;
+            color: var(--muted);
+        }
+
+        footer {
+            padding: 65px 20px;
+            text-align: center;
+            background: #061d14;
+        }
+
+        footer .script {
+            font: 400 76px Sacramento, cursive;
+            color: var(--gold);
+        }
+
+        footer p {
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 1000px) {
+            .hero {
+                padding-top: 155px;
+            }
+
+            .side,
+            .verse {
+                top: 96px;
+            }
+
+            .side {
+                left: 25px;
+            }
+
+            .verse {
+                right: 25px;
+            }
+
+            .names {
+                font-size: clamp(60px, 7vw, 88px);
+            }
+        }
+
+        /* MOBILE: SEPARATE PORTRAIT BACKGROUND */
+
+        @media (max-width: 680px) {
+            .hero {
+                min-height: 100svh;
+                padding: 130px 17px 75px;
+
+                background-image:
+                    linear-gradient(to bottom,
+                        rgba(4, 27, 17, .25),
+                        rgba(4, 27, 17, .43) 35%,
+                        rgba(4, 27, 17, .48) 65%,
+                        rgba(4, 27, 17, .25)),
+                    url('garden-background-mobile.webp');
+
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .hero::before {
+                background: none;
+            }
+
+            .hero::after {
+                box-shadow: inset 0 0 55px #03140f40;
+            }
+
+            .topbar {
+                padding: 16px 18px;
+            }
+
+            .logo {
+                font-size: 31px;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .music {
+                padding: 10px 13px;
+                font-size: 11px;
+            }
+
+            .side,
+            .verse {
+                display: none;
+            }
+
+            .hero-inner {
+                margin: auto;
+            }
+
+            .bismillah {
+                font-size: clamp(19px, 5vw, 25px);
+                line-height: 1.7;
+                margin-bottom: 13px;
+            }
+
+            .names {
+                font-size: clamp(54px, 12vw, 78px);
+                line-height: 1.05;
+                margin: 22px 0 13px;
+            }
+
+            .eyebrow {
+                font-size: 9px;
+                letter-spacing: .25em;
+            }
+
+            .tagline {
+                font-size: 9px;
+                letter-spacing: .12em;
+            }
+
+            .countdown {
+                gap: 7px;
+                margin: 22px auto;
+            }
+
+            .countdown>div {
+                padding: 9px 3px;
+                background: rgba(3, 28, 18, .65);
+            }
+
+            .countdown strong {
+                font-size: 34px;
+            }
+
+            .countdown small {
+                font-size: 8px;
+            }
+
+            .details {
+                gap: 11px;
+                margin-bottom: 23px;
+            }
+
+            .details>div {
+                border: 0;
+                padding: 0 6px;
+                font-size: 11px;
+            }
+
+            .details>div:last-child {
+                flex-basis: 100%;
+            }
+
+            .btn {
+                padding: 13px 19px;
+                font-size: 11px;
+            }
+
+            .section {
+                padding: 85px 20px;
+            }
+
+            .section h2 {
+                font-size: 64px;
+            }
+
+            .scroll {
+                bottom: 15px;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 370px) {
+            .names {
+                font-size: 49px;
+            }
+
+            .hero {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .details>div {
+                font-size: 10px;
+            }
+
+            .btn {
+                padding: 12px 14px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="invitation-locked">
+
+    <!-- OPENING SCREEN -->
+
+    <div class="opening-screen" id="openingScreen" role="dialog" aria-modal="true" aria-label="Open wedding invitation">
+        <div class="opening-card">
+            <div class="opening-kicker">
+                With love & blessings
+            </div>
+
+            <div class="opening-names">
+                <span>Farzana Basheer</span>
+                <em>&</em>
+                <span>Muhammed Rafi</span>
+            </div>
+
+            <div class="opening-date">
+                SUNDAY · 6 DECEMBER 2026
+            </div>
+
+            <button class="btn opening-button" id="openInvitation" type="button">
+                ✧ Open Invitation ✧
+            </button>
+
+            <div class="opening-note">
+                Opens with music ♫
+            </div>
+        </div>
+    </div>
+
+    <!-- MUSIC -->
+
+    <audio id="audio" src="song_[cut_182sec].mp3" preload="auto" loop></audio>
+
+    <!-- WEDDING INVITATION -->
+
+    <header class="hero" id="home">
+
+        <div class="topbar">
+            <a class="logo" href="#home">R & F</a>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#blessings">Our Story</a>
+                <a href="#details">Wedding Details</a>
+                <a href="#venue">Venue</a>
+            </nav>
+
+            <button class="music" id="music" aria-label="Toggle background music">
+                ♫ Play Music
+            </button>
+        </div>
+
+        <div class="side">
+            Together<br>
+            in faith<br>
+            forever<br>
+            in love
+        </div>
+
+        <div class="verse">
+            “And We created you<br>in pairs.”
+            <small>QUR’AN 78:8</small>
+        </div>
+
+        <div class="hero-inner">
+
+            <!-- NEW BISMILLAH ABOVE WEDDING TITLE -->
+
+            <div class="bismillah" lang="ar" dir="rtl">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </div>
+
+            <div class="eyebrow">
+                The wedding of
+            </div>
+
+            <h1 class="names">
+                <span>Farzana Basheer</span>
+                <em>&</em>
+                <span>Muhammed Rafi</span>
+            </h1>
+
+            <div class="tagline">
+                Two hearts · One journey · Insha Allah
+            </div>
+
+            <div class="divider">♡</div>
+
+            <!-- COUNTDOWN -->
+
+            <div class="countdown" aria-label="Wedding countdown">
+                <div>
+                    <strong id="days">--</strong>
+                    <small>Days</small>
+                </div>
+
+                <div>
+                    <strong id="hours">--</strong>
+                    <small>Hours</small>
+                </div>
+
+                <div>
+                    <strong id="minutes">--</strong>
+                    <small>Minutes</small>
+                </div>
+
+                <div>
+                    <strong id="seconds">--</strong>
+                    <small>Seconds</small>
+                </div>
+            </div>
+
+            <!-- WEDDING DETAILS -->
+
+            <div class="details" id="details">
+                <div>
+                    <b>Wedding date</b>
+                    Sunday, 6 December 2026
+                </div>
+
+                <div>
+                    <b>Time</b>
+                    11:30 AM – 12:00 PM
+                </div>
+
+                <div>
+                    <b>Venue</b>
+                    The Palace Convention Center
+                </div>
+            </div>
+
+            <div class="buttons">
+                <a class="btn" href="https://maps.app.goo.gl/Cw1oeUuJvX1zG3Xf7" target="_blank"
+                    rel="noopener noreferrer">
+                    ⌖ Get Directions ↗
+                </a>
+
+                <a class="btn outline" id="calendar" target="_blank" rel="noopener noreferrer">
+                    ▦ Add to Calendar ↗
+                </a>
+            </div>
+
+        </div>
+
+        <a class="scroll" href="#blessings">
+            Scroll to explore ↓
+        </a>
+    </header>
+
+    <!-- BLESSINGS -->
+
+    <main>
+        <section class="section light" id="blessings">
+
+            <div class="arabic" lang="ar" dir="rtl">
+                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+            </div>
+
+            <div class="eyebrow" style="margin-top:25px">
+                Together in faith, forever in love
+            </div>
+
+            <h2>Our beautiful beginning</h2>
+
+            <p>
+                With gratitude to Allah and the blessings of our families,
+                we joyfully invite you to celebrate the beginning of our
+                married life. Your presence and prayers will make this
+                day even more meaningful.
+            </p>
+
+        </section>
+
+        <!-- VENUE -->
+
+        <section class="section venue" id="venue">
+
+            <div class="eyebrow">
+                You are cordially invited
+            </div>
+
+            <h2>
+                The Palace<br>
+                Convention Center
+            </h2>
+
+            <div class="divider">✧</div>
+
+            <p>
+                Sunday, 6 December 2026<br>
+                Wedding ceremony · 11:30 AM – 12:00 PM
+            </p>
+
+            <div class="buttons">
+                <a class="btn" href="https://maps.app.goo.gl/Cw1oeUuJvX1zG3Xf7" target="_blank"
+                    rel="noopener noreferrer">
+                    Get Directions ↗
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="eyebrow">
+            With love & gratitude
+        </div>
+
+        <div class="script">
+            See you there!
+        </div>
+
+        <p>
+            Muhammed Rafi & Farzana Basheer<br>
+            06 · 12 · 2026
+        </p>
+    </footer>
+
+    <script>
+        // MUSIC
+
+        const audio = document.getElementById('audio');
+        const music = document.getElementById('music');
+
+        audio.volume = 0.65;
+
+        function setLabel() {
+            music.textContent = audio.paused
+                ? '♫ Play Music'
+                : '♫ Pause Music';
+
+            music.setAttribute(
+                'aria-pressed',
+                String(!audio.paused)
+            );
+        }
+        // Stop music when the page becomes hidden
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                audio.pause();
+                setLabel();
+            }
+        });
+
+        // Stop music when navigating away
+        window.addEventListener('pagehide', () => {
+            audio.pause();
+            setLabel();
+        });
+
+        // Stop music when the browser starts unloading the page
+        window.addEventListener('beforeunload', () => {
+            audio.pause();
+        });
+
+        // Keep the button label accurate when returning
+        window.addEventListener('pageshow', () => {
+            setLabel();
+        });
+
+        const openingScreen =
+            document.getElementById('openingScreen');
+
+        const openInvitation =
+            document.getElementById('openInvitation');
+
+        openInvitation.addEventListener('click', () => {
+            const playback = audio.play();
+
+            openingScreen.classList.add('is-hidden');
+            document.body.classList.remove('invitation-locked');
+
+            if (playback && typeof playback.then === 'function') {
+                playback
+                    .then(setLabel)
+                    .catch(error => {
+                        console.warn('Music could not play:', error);
+                        setLabel();
+                    });
+            }
+        });
+
+        openingScreen.addEventListener('transitionend', () => {
+            if (openingScreen.classList.contains('is-hidden')) {
+                openingScreen.remove();
+            }
+        });
+
+        // MUSIC PLAY / PAUSE
+
+        music.addEventListener('click', async () => {
+            if (audio.paused) {
+                try {
+                    await audio.play();
+                } catch (error) {
+                    console.warn('Music playback unavailable:', error);
+                }
+            } else {
+                audio.pause();
+            }
+
+            setLabel();
+        });
+
+        // COUNTDOWN
+
+        const date = new Date('2026-12-06T11:30:00+05:30');
+
+        function update() {
+            const ms = Math.max(0, date - new Date());
+
+            const values = {
+                days: Math.floor(ms / 86400000),
+                hours: Math.floor(ms / 3600000) % 24,
+                minutes: Math.floor(ms / 60000) % 60,
+                seconds: Math.floor(ms / 1000) % 60
+            };
+
+            for (const [key, value] of Object.entries(values)) {
+                document.getElementById(key).textContent =
+                    String(value).padStart(2, '0');
+            }
+        }
+
+        update();
+        setInterval(update, 1000);
+
+        // GOOGLE CALENDAR
+
+        const qs = new URLSearchParams({
+            action: 'TEMPLATE',
+            text: 'Wedding of Muhammed Rafi & Farzana Basheer',
+            dates: '20261206T113000/20261206T120000',
+            ctz: 'Asia/Kolkata',
+            details: 'Wedding ceremony',
+            location: 'The Palace Convention Center'
+        });
+
+        document.getElementById('calendar').href =
+            'https://calendar.google.com/calendar/render?' +
+            qs.toString();
+
+        // FLOATING PETALS
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            for (let i = 0; i < 12; i++) {
+                const petal = document.createElement('span');
+
+                petal.className = 'petal';
+                petal.textContent = i % 2 ? '✦' : '❀';
+
+                petal.style.left = (i * 8 + 3) + '%';
+                petal.style.animationDuration = (10 + i % 6) + 's';
+                petal.style.animationDelay = (-i * 2) + 's';
+
+                document.querySelector('.hero').appendChild(petal);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

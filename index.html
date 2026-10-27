@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <style>
     :root {
@@ -67,12 +69,10 @@
       justify-content: center;
       padding: 24px;
       text-align: center;
-      background: radial-gradient(
-        ellipse at 50% 38%,
-        #214a34 0%,
-        #09291b 60%,
-        #061e15 100%
-      );
+      background: radial-gradient(ellipse at 50% 38%,
+          #214a34 0%,
+          #09291b 60%,
+          #061e15 100%);
       transition:
         opacity .65s ease,
         visibility .65s ease;
@@ -142,12 +142,10 @@
       padding: 120px 25px 65px;
 
       background-image:
-        linear-gradient(
-          90deg,
+        linear-gradient(90deg,
           rgba(5, 35, 23, .12),
           rgba(7, 38, 25, .23),
-          rgba(5, 35, 23, .12)
-        ),
+          rgba(5, 35, 23, .12)),
         url('garden-background.webp');
 
       background-position: center;
@@ -161,12 +159,10 @@
       inset: 0;
       z-index: -1;
 
-      background: radial-gradient(
-        ellipse 47% 73% at 50% 47%,
-        #08291ae0 8%,
-        #08291ac9 68%,
-        transparent 100%
-      );
+      background: radial-gradient(ellipse 47% 73% at 50% 47%,
+          #08291ae0 8%,
+          #08291ac9 68%,
+          transparent 100%);
     }
 
     .hero::after {
@@ -348,7 +344,7 @@
       margin: 27px auto;
     }
 
-    .countdown > div {
+    .countdown>div {
       border: 1px solid #d5b47c9c;
       border-radius: 5px;
       background: #061f16aa;
@@ -378,14 +374,14 @@
       max-width: 900px;
     }
 
-    .details > div {
+    .details>div {
       font-size: 11px;
       line-height: 1.6;
       padding: 2px 20px;
       border-right: 1px solid #d8ba8885;
     }
 
-    .details > div:last-child {
+    .details>div:last-child {
       border: 0;
     }
 
@@ -465,7 +461,8 @@
         opacity: 0;
       }
 
-      15%, 85% {
+      15%,
+      85% {
         opacity: .65;
       }
 
@@ -508,11 +505,9 @@
     }
 
     .venue {
-      background: radial-gradient(
-        ellipse at center,
-        #1c4732,
-        #09291b 70%
-      );
+      background: radial-gradient(ellipse at center,
+          #1c4732,
+          #09291b 70%);
     }
 
     .venue h2 {
@@ -573,13 +568,11 @@
         padding: 130px 17px 75px;
 
         background-image:
-          linear-gradient(
-            to bottom,
+          linear-gradient(to bottom,
             rgba(4, 27, 17, .25),
             rgba(4, 27, 17, .43) 35%,
             rgba(4, 27, 17, .48) 65%,
-            rgba(4, 27, 17, .25)
-          ),
+            rgba(4, 27, 17, .25)),
           url('garden-background-mobile.webp');
 
         background-position: center center;
@@ -648,7 +641,7 @@
         margin: 22px auto;
       }
 
-      .countdown > div {
+      .countdown>div {
         padding: 9px 3px;
         background: rgba(3, 28, 18, .65);
       }
@@ -666,13 +659,13 @@
         margin-bottom: 23px;
       }
 
-      .details > div {
+      .details>div {
         border: 0;
         padding: 0 6px;
         font-size: 11px;
       }
 
-      .details > div:last-child {
+      .details>div:last-child {
         flex-basis: 100%;
       }
 
@@ -705,7 +698,7 @@
         padding-right: 12px;
       }
 
-      .details > div {
+      .details>div {
         font-size: 10px;
       }
 
@@ -715,6 +708,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       *,
       *::before,
       *::after {
@@ -729,13 +723,7 @@
 
   <!-- OPENING SCREEN -->
 
-  <div
-    class="opening-screen"
-    id="openingScreen"
-    role="dialog"
-    aria-modal="true"
-    aria-label="Open wedding invitation"
-  >
+  <div class="opening-screen" id="openingScreen" role="dialog" aria-modal="true" aria-label="Open wedding invitation">
     <div class="opening-card">
       <div class="opening-kicker">
         With love & blessings
@@ -751,11 +739,7 @@
         SUNDAY · 6 DECEMBER 2026
       </div>
 
-      <button
-        class="btn opening-button"
-        id="openInvitation"
-        type="button"
-      >
+      <button class="btn opening-button" id="openInvitation" type="button">
         ✧ Open Invitation ✧
       </button>
 
@@ -767,12 +751,7 @@
 
   <!-- MUSIC -->
 
-  <audio
-    id="audio"
-    src="song_[cut_182sec].mp3"
-    preload="auto"
-    loop
-  ></audio>
+  <audio id="audio" src="song_[cut_182sec].mp3" preload="auto" loop></audio>
 
   <!-- WEDDING INVITATION -->
 
@@ -788,11 +767,7 @@
         <a href="#venue">Venue</a>
       </nav>
 
-      <button
-        class="music"
-        id="music"
-        aria-label="Toggle background music"
-      >
+      <button class="music" id="music" aria-label="Toggle background music">
         ♫ Play Music
       </button>
     </div>
@@ -877,21 +852,11 @@
       </div>
 
       <div class="buttons">
-        <a
-          class="btn"
-          href="https://maps.app.goo.gl/Cw1oeUuJvX1zG3Xf7"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="btn" href="https://maps.app.goo.gl/Cw1oeUuJvX1zG3Xf7" target="_blank" rel="noopener noreferrer">
           ⌖ Get Directions ↗
         </a>
 
-        <a
-          class="btn outline"
-          id="calendar"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="btn outline" id="calendar" target="_blank" rel="noopener noreferrer">
           ▦ Add to Calendar ↗
         </a>
       </div>
@@ -948,12 +913,7 @@
       </p>
 
       <div class="buttons">
-        <a
-          class="btn"
-          href="https://maps.app.goo.gl/Cw1oeUuJvX1zG3Xf7"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a class="btn" href="https://maps.app.goo.gl/Cw1oeUuJvX1zG3Xf7" target="_blank" rel="noopener noreferrer">
           Get Directions ↗
         </a>
       </div>
@@ -996,16 +956,29 @@
         String(!audio.paused)
       );
     }
-  // STOP MUSIC WHEN LEAVING THE PAGE
-  window.addEventListener('pagehide', () => {
-    audio.pause();
-  });
+    // Stop music when the page becomes hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        audio.pause();
+        setLabel();
+      }
+    });
 
-  // UPDATE MUSIC BUTTON WHEN RETURNING TO THE PAGE
-  window.addEventListener('pageshow', () => {
-    setLabel();
-  });
-    // OPEN INVITATION
+    // Stop music when navigating away
+    window.addEventListener('pagehide', () => {
+      audio.pause();
+      setLabel();
+    });
+
+    // Stop music when the browser starts unloading the page
+    window.addEventListener('beforeunload', () => {
+      audio.pause();
+    });
+
+    // Keep the button label accurate when returning
+    window.addEventListener('pageshow', () => {
+      setLabel();
+    });
 
     const openingScreen =
       document.getElementById('openingScreen');
@@ -1108,4 +1081,5 @@
   </script>
 
 </body>
+
 </html>

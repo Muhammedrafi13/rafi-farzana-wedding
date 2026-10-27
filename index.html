@@ -996,7 +996,15 @@
         String(!audio.paused)
       );
     }
+  // STOP MUSIC WHEN LEAVING THE PAGE
+  window.addEventListener('pagehide', () => {
+    audio.pause();
+  });
 
+  // UPDATE MUSIC BUTTON WHEN RETURNING TO THE PAGE
+  window.addEventListener('pageshow', () => {
+    setLabel();
+  });
     // OPEN INVITATION
 
     const openingScreen =
